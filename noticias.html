@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="img/wasp_logo.png">
+        <title>Noticias | WASP UFRO</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        .hero{
+            min-height: 250px;
+        }
+
+        .text-box{
+            top: 65%;
+        }
+
+        .text-box h1{
+            font-size: 45px;
+        }
+
+        .directory{
+
+            width:80%;
+
+            margin:auto;
+
+            padding:60px 0;
+        }
+
+        .directory h2{
+
+            color:#005092;
+
+            margin-bottom:25px;
+
+            border-left:5px solid #ffcc00;
+
+            padding-left:15px;
+        }
+
+        .member{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:20px;
+
+            padding:15px;
+
+            margin-bottom:15px;
+
+            border-radius:10px;
+
+            background:#f5f5f5;
+        }
+
+        .member img{
+
+            width:80px;
+
+            height:80px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+        }
+
+        .member-info h3{
+
+            color:#005092;
+
+            margin-bottom:4px;
+        }
+
+        .member-info p{
+
+            margin:4px 0;
+
+            color:#444;
+        }
+
+        @media(max-width:900px){
+
+            .member{
+
+                flex-direction:column;
+
+                text-align:center;
+            }
+
+            .text-box h1{
+
+                font-size:32px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <a href="https://fica.ufro.cl">
+        <img src="img/Logo-FACI-UFRO.webp" alt="FACI UFRO">
+    </a>
+    <a href="https://inele.ufro.cl">
+        <img src="img/inele.svg" alt="INELE UFRO">
+    </a>
+    <a href="https://https://redlab.ufro.cl/">
+        <img src="img/redlab_logo_white.png" alt="REDLAB UFRO">
+    </a>
+</header>
+
+<section class="hero">
+
+    <nav>
+
+        <a href="inicio.html">
+            <img src="img/wasp_logoHorizontal.png" alt="WASP">
+        </a>
+
+        <div class="nav-links" id="navLinks">
+
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+
+            <ul>
+
+                <li><a href="inicio.html">INICIO</a></li>
+
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+
+                <li><a href="noticias.html">NOTICIAS</a></li>
+
+                <li><a href="miembros.html">MIEMBROS</a></li>
+
+                <li><a href="proyectos.html">PROYECTOS</a></li>
+
+                <li><a href="publicaciones.html">PUBLICACIONES</a></li>
+                <li><a href="servicios.html">SERVICIOS</a></li>
+
+            </ul>
+
+            <div class="mobile-service-links" aria-label="Servicios del laboratorio">
+                <a href="https://data.wasp.ufro.cl/cloud/login" target="_blank" rel="noopener noreferrer" aria-label="Acceder a Nextcloud">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.018 6.537c-2.5 0-4.6 1.712-5.241 4.015-.56-1.232-1.793-2.105-3.225-2.105A3.569 3.569 0 0 0 0 12a3.569 3.569 0 0 0 3.552 3.553c1.432 0 2.664-.874 3.224-2.106.641 2.304 2.742 4.016 5.242 4.016 2.487 0 4.576-1.693 5.231-3.977.569 1.21 1.783 2.067 3.198 2.067A3.568 3.568 0 0 0 24 12a3.569 3.569 0 0 0-3.553-3.553c-1.416 0-2.63.858-3.199 2.067-.654-2.284-2.743-3.978-5.23-3.977zm0 2.085c1.878 0 3.378 1.5 3.378 3.378 0 1.878-1.5 3.378-3.378 3.378A3.362 3.362 0 0 1 8.641 12c0-1.878 1.5-3.378 3.377-3.378zm-8.466 1.91c.822 0 1.467.645 1.467 1.468s-.644 1.467-1.467 1.468A1.452 1.452 0 0 1 2.085 12c0-.823.644-1.467 1.467-1.467zm16.895 0c.823 0 1.468.645 1.468 1.468s-.645 1.467-1.468 1.468A1.452 1.452 0 0 1 18.98 12c0-.823.644-1.467 1.467-1.467z"/></svg>
+                    <span>Nextcloud</span>
+                </a>
+                <a href="https://wasp.ufro.cl/overleaf" target="_blank" rel="noopener noreferrer" aria-label="Acceder a Overleaf">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.3515.7484C19.1109-.5101 7.365-.982 7.3452 6.0266c-3.4272 2.194-5.6967 5.768-5.6967 9.598a8.373 8.373 0 0 0 13.1225 6.898 8.373 8.373 0 0 0-1.7668-14.7194c-.6062-.2339-1.9234-.6481-2.9753-.559-1.5007.9544-3.3308 2.9155-4.1949 4.8693 2.5894-3.082 7.5046-2.425 9.1937 1.2287 1.6892 3.6538-.9944 7.8237-5.0198 7.7998a5.4995 5.4995 0 0 1-4.1949-1.9328c-1.485-1.7483-1.8678-3.6444-1.5615-5.4975 1.057-6.4947 8.759-10.1894 14.486-11.6094-1.8677.989-5.2373 2.6134-7.5948 4.3837C18.015 9.1382 19.1308 3.345 22.3515.7484z"/></svg>
+                    <span>Overleaf</span>
+                </a>
+                <a href="https://data.wasp.ufro.cl/registro/" target="_blank" rel="noopener noreferrer" aria-label="Acceder a Registro">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm17.71-10.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                    <span>Registro</span>
+                </a>
+            </div>
+
+        </div>
+
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+
+    </nav>
+
+    <div class="service-shortcuts" aria-label="Servicios del laboratorio">
+        <a class="service-shortcut" href="https://data.wasp.ufro.cl/cloud/login" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.018 6.537c-2.5 0-4.6 1.712-5.241 4.015-.56-1.232-1.793-2.105-3.225-2.105A3.569 3.569 0 0 0 0 12a3.569 3.569 0 0 0 3.552 3.553c1.432 0 2.664-.874 3.224-2.106.641 2.304 2.742 4.016 5.242 4.016 2.487 0 4.576-1.693 5.231-3.977.569 1.21 1.783 2.067 3.198 2.067A3.568 3.568 0 0 0 24 12a3.569 3.569 0 0 0-3.553-3.553c-1.416 0-2.63.858-3.199 2.067-.654-2.284-2.743-3.978-5.23-3.977zm0 2.085c1.878 0 3.378 1.5 3.378 3.378 0 1.878-1.5 3.378-3.378 3.378A3.362 3.362 0 0 1 8.641 12c0-1.878 1.5-3.378 3.377-3.378zm-8.466 1.91c.822 0 1.467.645 1.467 1.468s-.644 1.467-1.467 1.468A1.452 1.452 0 0 1 2.085 12c0-.823.644-1.467 1.467-1.467zm16.895 0c.823 0 1.468.645 1.468 1.468s-.645 1.467-1.468 1.468A1.452 1.452 0 0 1 18.98 12c0-.823.644-1.467 1.467-1.467z"/></svg>
+            <span>Nextcloud</span>
+        </a>
+        <a class="service-shortcut" href="https://wasp.ufro.cl/overleaf" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.3515.7484C19.1109-.5101 7.365-.982 7.3452 6.0266c-3.4272 2.194-5.6967 5.768-5.6967 9.598a8.373 8.373 0 0 0 13.1225 6.898 8.373 8.373 0 0 0-1.7668-14.7194c-.6062-.2339-1.9234-.6481-2.9753-.559-1.5007.9544-3.3308 2.9155-4.1949 4.8693 2.5894-3.082 7.5046-2.425 9.1937 1.2287 1.6892 3.6538-.9944 7.8237-5.0198 7.7998a5.4995 5.4995 0 0 1-4.1949-1.9328c-1.485-1.7483-1.8678-3.6444-1.5615-5.4975 1.057-6.4947 8.759-10.1894 14.486-11.6094-1.8677.989-5.2373 2.6134-7.5948 4.3837C18.015 9.1382 19.1308 3.345 22.3515.7484z"/></svg>
+            <span>Overleaf</span>
+        </a>
+        <a class="service-shortcut" href="https://data.wasp.ufro.cl/registro/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm17.71-10.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            <span>Registro</span>
+        </a>
+    </div>
+
+    <div class="page-title">
+
+        <h1>Noticias</h1>
+
+        <p>
+           Todas las noticias asociadas al laboratorio y sus miembros
+        </p>
+
+    </div>
+
+</section>
+
+<main class="news-page" id="newsPage">
+    <section class="news-browser" id="newsBrowser" aria-labelledby="newsHeading">
+        <div class="news-page-heading">
+            <label class="news-search-label" for="newsSearch">Buscar</label>
+            <input id="newsSearch" class="news-search" type="search" placeholder="Título, resumen o contenido" autocomplete="off">
+            <div class="news-filter-row">
+                <label class="news-filter-label" for="typeFilter">Tipo de noticia</label>
+                <select id="typeFilter" class="news-filter">
+                    <option value="">Todos los tipos</option>
+                </select>
+                <label class="featured-filter">
+                    <input id="featuredFilter" type="checkbox">
+                    Solo destacadas
+                </label>
+            </div>
+        </div>
+        <p id="newsStatus" class="news-status" role="status" aria-live="polite">Cargando noticias...</p>
+        <div id="newsList" class="news-list"></div>
+        <nav id="newsPagination" class="news-pagination" aria-label="Paginación de noticias" hidden>
+            <button id="previousPage" type="button">Anterior</button>
+            <span id="pageIndicator" aria-live="polite"></span>
+            <button id="nextPage" type="button">Siguiente</button>
+        </nav>
+    </section>
+
+    <article id="newsArticle" class="news-article" hidden>
+        <a class="news-back" href="noticias.html">&larr; Volver a noticias</a>
+        <div id="articleContent" class="markdown-content"></div>
+    </article>
+</main>
+
+
+
+<footer class="footer">
+
+    <div>
+        <strong>© WASP UFRO</strong><br>
+        Wireless Applications & Signal Processing Laboratory
+    </div>
+
+    <div>
+        Departamento de Ingeniería Eléctrica<br>
+        Universidad de La Frontera
+    </div>
+
+</footer>
+
+
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu(){
+        navLinks.style.right = "-280px";
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script>
+    const newsList = document.getElementById("newsList");
+    const newsStatus = document.getElementById("newsStatus");
+    const typeFilter = document.getElementById("typeFilter");
+    const newsSearch = document.getElementById("newsSearch");
+    const featuredFilter = document.getElementById("featuredFilter");
+    const newsPagination = document.getElementById("newsPagination");
+    const previousPage = document.getElementById("previousPage");
+    const nextPage = document.getElementById("nextPage");
+    const pageIndicator = document.getElementById("pageIndicator");
+    const newsBrowser = document.getElementById("newsBrowser");
+    const newsArticle = document.getElementById("newsArticle");
+    const articleContent = document.getElementById("articleContent");
+    const newsPerPage = 20;
+    let newsItems = [];
+    let currentPage = 1;
+
+    function parseNewsFile(markdown, filename) {
+        const parts = markdown.split(/\r?\n/);
+        if (parts[0] !== "---") {
+            throw new Error(filename + " no tiene encabezado YAML.");
+        }
+
+        const endOfMetadata = parts.indexOf("---", 1);
+        if (endOfMetadata === -1) {
+            throw new Error(filename + " tiene un encabezado incompleto.");
+        }
+
+        const metadata = {};
+        for (const line of parts.slice(1, endOfMetadata)) {
+            const match = line.match(/^([a-z]+):\s*(.*)$/i);
+            if (match) {
+                metadata[match[1]] = match[2].replace(/^["']|["']$/g, "").trim();
+            }
+        }
+
+        if (!metadata.titulo || !metadata.fecha || !metadata.resumen) {
+            throw new Error(filename + " debe incluir titulo, fecha y resumen.");
+        }
+        const parsedDate = new Date(metadata.fecha + "T12:00:00Z");
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(metadata.fecha) ||
+            Number.isNaN(parsedDate.getTime()) ||
+            parsedDate.toISOString().slice(0, 10) !== metadata.fecha) {
+            throw new Error(filename + " debe usar una fecha válida con formato AAAA-MM-DD.");
+        }
+
+        return {
+            filename,
+            title: metadata.titulo,
+            date: metadata.fecha,
+            type: metadata.tipo || metadata.categoria || "General",
+            image: metadata.imagen || "",
+            featured: /^true$/i.test(metadata.destacada || ""),
+            summary: metadata.resumen,
+            location: metadata.ubicacion || "",
+            body: parts.slice(endOfMetadata + 1).join("\n").trim()
+        };
+    }
+
+    function formatDate(date) {
+        return new Intl.DateTimeFormat("es-CL", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            timeZone: "UTC"
+        }).format(new Date(date + "T12:00:00Z"));
+    }
+
+    function normalizeSearchText(text) {
+        return text
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLocaleLowerCase("es");
+    }
+
+    function renderNews() {
+        const selectedType = typeFilter.value;
+        const query = normalizeSearchText(newsSearch.value.trim());
+        const onlyFeatured = featuredFilter.checked;
+        const filteredItems = newsItems.filter(function (item) {
+            const matchesType = !selectedType || item.type === selectedType;
+            const searchableText = normalizeSearchText(
+                [item.title, item.summary, item.location, item.type, item.body].join(" ")
+            );
+            return matchesType &&
+                (!onlyFeatured || item.featured) &&
+                (!query || searchableText.includes(query));
+        });
+
+        newsList.replaceChildren();
+        if (filteredItems.length === 0) {
+            newsPagination.hidden = true;
+            newsStatus.textContent = newsItems.length
+                ? "No se encontraron noticias con esos criterios. Prueba otra búsqueda o filtro."
+                : "Todavía no hay noticias publicadas. Agrega un archivo .md a la carpeta noticias. En un hosting estático, también regístralo en noticias/index.json.";
+            return;
+        }
+
+        const pageCount = Math.ceil(filteredItems.length / newsPerPage);
+        currentPage = Math.min(currentPage, pageCount);
+        const firstItem = (currentPage - 1) * newsPerPage;
+        const pageItems = filteredItems.slice(firstItem, firstItem + newsPerPage);
+        newsStatus.textContent = "Mostrando " + (firstItem + 1) + "-" +
+            Math.min(firstItem + newsPerPage, filteredItems.length) + " de " +
+            filteredItems.length + " noticias.";
+        newsPagination.hidden = pageCount <= 1;
+        previousPage.disabled = currentPage === 1;
+        nextPage.disabled = currentPage === pageCount;
+        pageIndicator.textContent = "Página " + currentPage + " de " + pageCount;
+
+        for (const item of pageItems) {
+            const card = document.createElement("article");
+            card.className = item.featured
+                ? "news-item news-item--featured"
+                : "news-item";
+
+            if (item.image) {
+                const imageUrl = getNewsImageUrl(item.image);
+                if (imageUrl) {
+                    const image = document.createElement("img");
+                    image.className = "news-thumbnail";
+                    image.src = imageUrl;
+                    image.alt = "";
+                    image.loading = "lazy";
+                    image.addEventListener("error", function () {
+                        image.remove();
+                    }, { once: true });
+                    card.append(image);
+                }
+            }
+
+            const tags = document.createElement("div");
+            tags.className = "news-tags";
+            const typeTag = document.createElement("span");
+            typeTag.className = "news-category";
+            typeTag.textContent = item.type;
+            tags.append(typeTag);
+            if (item.featured) {
+                const featuredTag = document.createElement("span");
+                featuredTag.className = "news-featured-tag";
+                featuredTag.textContent = "Destacada";
+                tags.append(featuredTag);
+            }
+
+            const heading = document.createElement("h3");
+            const link = document.createElement("a");
+            link.href = "#";
+            link.textContent = item.title;
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                showArticle(item.filename).catch(function (error) {
+                    newsArticle.hidden = true;
+                    newsBrowser.hidden = false;
+                    newsStatus.textContent = error.message;
+                });
+            });
+            heading.append(link);
+
+            const date = document.createElement("time");
+            date.dateTime = item.date;
+            date.textContent = formatDate(item.date);
+
+            const summary = document.createElement("p");
+            summary.className = "news-summary";
+            summary.textContent = item.summary;
+
+            card.append(tags, heading, date, summary);
+            if (item.location) {
+                const location = document.createElement("p");
+                location.className = "news-location";
+                location.textContent = item.location;
+                card.append(location);
+            }
+            newsList.append(card);
+        }
+    }
+
+    function getNewsImageUrl(imagePath) {
+        const normalizedPath = imagePath.replace(/\\/g, "/");
+        if (!normalizedPath ||
+            normalizedPath.startsWith("/") ||
+            /^[a-z][a-z\d+.-]*:/i.test(normalizedPath) ||
+            normalizedPath.split("/").includes("..") ||
+            /[?#]/.test(normalizedPath) ||
+            !/\.(png|jpe?g|webp|gif|svg)$/i.test(normalizedPath)) {
+            return "";
+        }
+        return "noticias/" + normalizedPath.split("/").map(encodeURIComponent).join("/");
+    }
+
+    async function showArticle(filename) {
+        const item = newsItems.find(function (news) {
+            return news.filename === filename;
+        });
+        if (!item) {
+            newsBrowser.hidden = true;
+            newsArticle.hidden = false;
+            articleContent.textContent = "No se encontró esa noticia.";
+            return;
+        }
+        newsBrowser.hidden = true;
+        newsArticle.hidden = false;
+        articleContent.classList.remove("markdown-source");
+        if (window.marked && window.DOMPurify) {
+            articleContent.innerHTML = window.DOMPurify.sanitize(window.marked.parse(item.body));
+            articleContent.querySelectorAll("img[src]").forEach(function (image) {
+                const source = image.getAttribute("src");
+                if (!source ||
+                    source.startsWith("/") ||
+                    /^[a-z][a-z\d+.-]*:/i.test(source)) {
+                    return;
+                }
+
+                const normalizedPath = source.replace(/\\/g, "/");
+                if (normalizedPath.split("/").includes("..")) {
+                    image.remove();
+                    return;
+                }
+                image.setAttribute(
+                    "src",
+                    "noticias/" + normalizedPath
+                );
+            });
+        } else {
+            articleContent.textContent = item.body;
+            articleContent.classList.add("markdown-source");
+        }
+
+        if (item.image) {
+            const imageUrl = getNewsImageUrl(item.image);
+            if (imageUrl) {
+                const image = document.createElement("img");
+                image.className = "article-image";
+                image.src = imageUrl;
+                image.alt = item.title;
+                image.addEventListener("error", function () {
+                    image.remove();
+                }, { once: true });
+                articleContent.prepend(image);
+            }
+        }
+
+        const title = document.createElement("h1");
+        title.className = "news-article-title";
+        title.textContent = item.title;
+        const summary = document.createElement("p");
+        summary.className = "news-article-summary";
+        summary.textContent = item.summary;
+        const location = document.createElement("p");
+        location.className = "news-article-location";
+        location.textContent = item.location;
+        const date = document.createElement("p");
+        date.className = "article-date";
+        date.textContent = item.type + (item.featured ? " · Destacada" : "") +
+            " · " + formatDate(item.date);
+        articleContent.prepend(date);
+        if (item.location) {
+            articleContent.prepend(location);
+        }
+        articleContent.prepend(summary);
+        articleContent.prepend(title);
+        document.title = item.title + " | Noticias WASP UFRO";
+    }
+
+    document.querySelector(".news-back").addEventListener("click", function (event) {
+        event.preventDefault();
+        newsArticle.hidden = true;
+        newsBrowser.hidden = false;
+        document.title = "Noticias | WASP UFRO";
+    });
+
+    function displayNews(items) {
+        newsItems = items;
+        newsItems.sort(function (a, b) {
+            return b.date.localeCompare(a.date);
+        });
+
+        typeFilter.replaceChildren(new Option("Todos los tipos", ""));
+        const types = [...new Set(newsItems.map(function (item) {
+            return item.type;
+        }))].sort(function (a, b) {
+            return a.localeCompare(b, "es");
+        });
+        for (const type of types) {
+            typeFilter.append(new Option(type, type));
+        }
+
+        renderNews();
+    }
+
+    function resetPageAndRender() {
+        currentPage = 1;
+        renderNews();
+    }
+
+    typeFilter.addEventListener("change", resetPageAndRender);
+    featuredFilter.addEventListener("change", resetPageAndRender);
+    newsSearch.addEventListener("input", resetPageAndRender);
+    previousPage.addEventListener("click", function () {
+        currentPage -= 1;
+        renderNews();
+    });
+    nextPage.addEventListener("click", function () {
+        currentPage += 1;
+        renderNews();
+    });
+
+    async function loadNews() {
+        if (window.location.protocol === "file:") {
+            newsStatus.textContent = "Para listar las noticias automáticamente desde la carpeta, ejecuta iniciar_noticias.bat y abre la dirección local que se mostrará.";
+            return;
+        }
+
+        try {
+            const response = await fetch("noticias/index.json");
+            if (!response.ok) {
+                throw new Error("No se pudo cargar noticias/index.json.");
+            }
+            const filenames = await response.json();
+            if (!Array.isArray(filenames) || filenames.some(function (filename) {
+                return typeof filename !== "string" || !/^[\w-]+\.md$/.test(filename);
+            })) {
+                throw new Error("El índice de noticias debe ser una lista de nombres de archivos .md.");
+            }
+
+            newsItems = await Promise.all(filenames.map(async function (filename) {
+                const fileResponse = await fetch("noticias/" + encodeURIComponent(filename));
+                if (!fileResponse.ok) {
+                    throw new Error("No se pudo cargar el archivo " + filename + ".");
+                }
+                return parseNewsFile(await fileResponse.text(), filename);
+            }));
+            displayNews(newsItems);
+            const requestedArticle = new URLSearchParams(window.location.search).get("noticia");
+            if (requestedArticle) {
+                await showArticle(requestedArticle);
+            }
+        } catch (error) {
+            const advice = "En Windows, ejecuta iniciar_noticias.bat desde la carpeta del sitio para listar automáticamente los archivos Markdown.";
+            newsStatus.textContent = "No fue posible cargar las noticias. " + error.message + " " + advice;
+        }
+    }
+
+    loadNews();
+</script>
+
+</body>
+</html>
